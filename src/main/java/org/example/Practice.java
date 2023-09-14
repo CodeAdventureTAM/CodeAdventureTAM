@@ -27,6 +27,7 @@ public class Practice {
         Practice test = new Practice();
         //test.performTest(driver);
         test.tearDown(driver);
+
         //test.exception();
     }
 
@@ -54,10 +55,6 @@ public class Practice {
         WebElement AutoComplete = driver.findElement(By.id("ui-id-80"));
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
         wait.until(ExpectedConditions.visibilityOf(AutoComplete));
-
-
-        /*AutoComplete.click();
-        System.out.println("AutoComplete Works");*/
 
 
         /*Dropdown dropdownObject = new Dropdown(dropdown);

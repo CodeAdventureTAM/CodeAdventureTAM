@@ -1,25 +1,27 @@
 package org.example;
-import dev.failsafe.internal.util.Assert;
-import io.opentelemetry.exporter.logging.SystemOutLogRecordExporter;
-import net.bytebuddy.implementation.bytecode.ShiftLeft;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+
+import org.junit.Assert;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
-import javax.swing.*;
-import java.util.Iterator;
-import java.util.Set;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
+//import org.junit.Assert;
 
 
 public class App {
 
+
     public static void main(String[] args) throws InterruptedException {
-    /*  //  System.setProperty("webdriver.chrome.driver", "C:\\Users\\arunt\\OneDrive\\Documents\\Automation\\chromedriver.exe");
+     // System.setProperty("webdriver.chrome.driver", "C:\\Users\\arunt\\OneDrive\\Documents\\Automation\\chromedriver.exe");
+      //System.setProperty("webdriver.edge.driver", "C:\\Users\\arunt\\OneDrive\\Documents\\Automation\\msedgedriver.exe");
+        App pp = new App();
         WebDriver driver = new ChromeDriver();
-        driver.get("https://rahulshettyacademy.com/AutomationPractice/");
+
+
+       /*  // driver.get("https://rahulshettyacademy.com/AutomationPractice/");
 
         Actions a = new Actions(driver);
         a.moveToElement(driver.findElement(By.id("mousehover"))).build().perform();
@@ -76,7 +78,9 @@ public class App {
 
 */
 
-    WebDriver driver= new ChromeDriver();
+    //WebDriver driver= new EdgeDriver();
+    //WebDriver driver = new ChromeDriver();
+/*
     driver.get("https://the-internet.herokuapp.com/");
     driver.findElement(By.linkText("Multiple Windows")).click();
     driver.findElement(By.linkText("Click Here")).click();
@@ -88,18 +92,79 @@ public class App {
     driver.switchTo().window(childwindow);
     System.out.println(driver.findElement(By.xpath("//div/h3")).getText());
     driver.switchTo().window(parentwindow);
-    System.out.println(driver.findElement(By.xpath("//div/h3")).getText());
+    System.out.println(driver.findElement(By.xpath("//div/h3")).getText());*/
+
+
+/*
+
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\arunt\\OneDrive\\Documents\\Automation\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();*/
+       /* driver.get("https://jqueryui.com/droppable/");
+        driver.manage().window().maximize();
+        driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@class='demo-frame']")));
+        WebElement source =driver.findElement(By.id("draggable"));
+        WebElement destination = driver.findElement(By.id("droppable"));
+        Actions move = new Actions(driver);
+        move.dragAndDrop(source, destination);
+        System.out.println("Move complete");*/
+
+/*
+        MyWipro mywipro = new MyWipro(driver);
+        mywipro.callmywipro();*/
+       //
+
+
+/*
+
+        driver.get("http://google.com");
+        Assert.assertEquals(driver.getTitle(),"Google");
+        WebElement searchbox = driver.findElement(By.name("q"));
+        searchbox.click();
+        searchbox.sendKeys("true");
+        searchbox.sendKeys(Keys.ENTER);
+        driver.findElement(new By.ByLinkText("true"));
+
+
+
+        Actions a = new Actions(driver);
+*/
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
+        driver.get("https://www.indiumsoftware.com/");
+
+        // Verify that the title of the page is correct
+        Assert.assertEquals(driver.getTitle(), "Indium Software | Digital Transformation | Product Engineering | Agile | AI | Cloud | Cybersecurity");
+
+        // Verify that the logo is displayed
+        WebElement logo = driver.findElement(By.xpath("//img[@alt='Indium Software Logo']"));
+        Assert.assertTrue(logo.isDisplayed());
+
+        // Verify that the navigation bar is displayed
+        WebElement navBar = driver.findElement(By.xpath("//nav[@id='main-nav']"));
+        Assert.assertTrue(navBar.isDisplayed());
 
 
 
 
+        // Verify that the contact information is displayed
+        WebElement contactInfo = driver.findElement(By.xpath("//div[@class='contact-info']"));
+        Assert.assertTrue(contactInfo.isDisplayed());
 
 
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        wait.until(ExpectedConditions.visibilityOf(contactInfo));
 
-        Thread.sleep(3000);
+
+        pp.tearDown(driver);
+
+
+    }
+
+
+    public void tearDown(WebDriver driver) throws InterruptedException {
+        Thread.sleep(4000);
         System.out.println(driver.getTitle());
         driver.close();
         driver.quit();
-
     }
 }
