@@ -12,6 +12,7 @@ public class PracImpli implements IFPracticeJava {
 public static int staticKeywordNum = 12345;
 public final int finalKeywordNum = 54321;
 
+    // from GIT
 
     @Override
     public void reverseANumber() {
@@ -35,6 +36,7 @@ public final int finalKeywordNum = 54321;
         System.out.println(aString.charAt(2));
 
     }
+    
 
     @Override
     public void nextNumChar() {
