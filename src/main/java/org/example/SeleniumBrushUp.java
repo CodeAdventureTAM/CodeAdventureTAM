@@ -11,20 +11,22 @@ import java.util.concurrent.TimeUnit;
 //import org.junit.Assert;
 
 
-public class App {
+public class SeleniumBrushUp {
 
 
     public static void main(String[] args) throws InterruptedException {
-     // System.setProperty("webdriver.chrome.driver", "C:\\Users\\arunt\\OneDrive\\Documents\\Automation\\chromedriver.exe");
-      //System.setProperty("webdriver.edge.driver", "C:\\Users\\arunt\\OneDrive\\Documents\\Automation\\msedgedriver.exe");
-        App pp = new App();
+        // System.setProperty("webdriver.chrome.driver", "C:\\Users\\arunt\\OneDrive\\Documents\\Automation\\chromedriver.exe");
+        //System.setProperty("webdriver.edge.driver", "C:\\Users\\arunt\\OneDrive\\Documents\\Automation\\msedgedriver.exe");
+        SeleniumBrushUp pp = new SeleniumBrushUp();
         WebDriver driver = new ChromeDriver();
 
 
-       /*  // driver.get("https://rahulshettyacademy.com/AutomationPractice/");
 
-        Actions a = new Actions(driver);
+         // driver.get("https://rahulshettyacademy.com/AutomationPractice/");
+
+       /* Actions a = new Actions(driver);
         a.moveToElement(driver.findElement(By.id("mousehover"))).build().perform();
+
         Thread.sleep(1500);
         driver.findElement(By.linkText("Top")).click();
         a.moveToElement(driver.findElement(By.id("mousehover"))).build().perform();
@@ -139,6 +141,7 @@ public class App {
         WebElement logo = driver.findElement(By.xpath("//img[@alt='Indium Software Logo']"));
         Assert.assertTrue(logo.isDisplayed());
 
+
         // Verify that the navigation bar is displayed
         WebElement navBar = driver.findElement(By.xpath("//nav[@id='main-nav']"));
         Assert.assertTrue(navBar.isDisplayed());
@@ -166,5 +169,13 @@ public class App {
         System.out.println(driver.getTitle());
         driver.close();
         driver.quit();
+
+        WebElement Email = driver.findElement(By.id("email-input"));
+        WebElement password = driver.findElement(By.id("password-input"));
+        Email.sendKeys("login@codility.com");
+
+       // WebElement passMessage = driver.findElement(By.xpath("//div[@class=validation error]")).getText();
+        //Assert.assertEquals(failuresMessage,"You shall not pass! Arr!");
+        //passMessage.isDisplayed
     }
 }

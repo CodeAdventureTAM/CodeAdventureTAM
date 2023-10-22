@@ -33,8 +33,15 @@ public class JavaPractice  {
         interFace.staticKeywordNum = 123;
         interFace.automorphicNumber();
         interFace.reverseNumAgain();
-        interFace.peterSonNumber();*/
+        interFace.peterSonNumber();
         interFace.existingMathFunctions();
+        interFace.sunnyNumberRange();
+        interFace.sunnyNumberInput();
+        interFace.stringLiteralObject();
+        interFace.techNumber();
+        interFace.facinatingNumber();*/
+        interFace.containsValidation();
+
 
 
 
