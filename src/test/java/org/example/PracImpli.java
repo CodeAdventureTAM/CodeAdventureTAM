@@ -4,6 +4,7 @@ import com.google.common.base.Supplier;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 import java.math.RoundingMode;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import static com.google.common.math.IntMath.*;
@@ -214,7 +215,45 @@ public final int finalKeywordNum = 54321;
 
     }
 
-//new changes
+    public void copyArrayInterger(){
+        int[] req = new int[]{1, 3, 4, 5, 6};
+        int [] req1= {1, 3, 4, 5, 6};
+        String[]req2 = {"2", "apple", "green"};
+
+        int[] result = new int[req.length];
+        int i;
+        //System.out.println(req.length);
+
+        for (i = 0; i<req.length; i++) {
+            result[i]=req[i];
+        }
+        /*for (i = 0; i< req.length; i++) {
+            System.out.print(result[i]);
+
+        }*/
+        for(int reql:req)
+            System.out.print(reql);
+    }
+
+    public void IntArraySort(){
+        int [] req = {435,23,798,324,7,0,34,769,2};
+        for (int i = 0; i < req.length; i++) {
+            for (int j = i+1; j < req.length; j++) {
+                if(req[j]<req[i]){
+                    int temp = req[i];
+                    req[i]=req[j];
+                    req[j]=temp;
+                }
+
+            }
+
+        }
+        for (int reql:req){
+            System.out.print(reql+", ");
+        }
+
+    }
+
 }
 
 

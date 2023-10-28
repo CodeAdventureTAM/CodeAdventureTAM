@@ -14,5 +14,8 @@ public interface IFPracticeJava {
     public void techNumber();
     public void facinatingNumber();
     public void containsValidation();
+    public void IntArraySort();
+
+    public void copyArrayInterger();
 }
 

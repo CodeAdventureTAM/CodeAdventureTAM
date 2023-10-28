@@ -8,7 +8,7 @@ public class JavaPractice  {
 
         /*StringReverse();
         Fibonacci();
-        PrimeNum();
+        PrimeNumber();
         Factorial();
 
         Palindrome();
@@ -40,7 +40,10 @@ public class JavaPractice  {
         interFace.stringLiteralObject();
         interFace.techNumber();
         interFace.facinatingNumber();
-        interFace.containsValidation();*/
+        interFace.containsValidation();
+        interFace.copyArrayInterger();
+        interFace.IntArraySort();*/
+        primeSeries();
 
 
 
@@ -267,15 +270,39 @@ public class JavaPractice  {
     }
 
     private static void PrimeNumber() {
-        int n1,n2,i,j=0,TotalNum=100;
-        System.out.print("Prime Numbers: ");
-        for (i=0;i<=TotalNum;i++) {
-            if (i % 2 != 0)
-                if (i % 3 != 0)
-                    System.out.print(i+", ");
+    int req = 100,i=0,result=0;
 
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("Enter number to check if it is Prime");
+    req = Integer.parseInt(scanner.nextLine());
+
+    if( req==0 || req==1 || req==4){
+        System.out.println(req+" is not prime");
         }
-        System.out.println("");
+    else{
+        for(i=2;i<Math.sqrt(req);i++){
+            if(req%i==0) {
+                //System.out.println(req + " is not Prime");
+                result = 1;
+            }
+        }if (result==0)
+            System.out.println(req+" is Prime");
+        else System.out.println(req+" is not Prime");}
+    }
+
+    public static void primeSeries(){
+        int length =1000,totalCount=0;
+        for (int i = 2; i < length; i++) {
+            boolean isPrime = true;
+            for (int j = 2; j < Math.sqrt(i); j++) {
+                if (i%j==0)
+                isPrime=false;
+            }
+            if(isPrime) {
+                System.out.println(i);
+                totalCount++;
+            }
+        }System.out.println("Total Count "+totalCount);
     }
 
     private static void Palindrome() {
