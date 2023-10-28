@@ -39,8 +39,8 @@ public class JavaPractice  {
         interFace.sunnyNumberInput();
         interFace.stringLiteralObject();
         interFace.techNumber();
-        interFace.facinatingNumber();*/
-        interFace.containsValidation();
+        interFace.facinatingNumber();
+        interFace.containsValidation();*/
 
 
 
